@@ -12,16 +12,6 @@ class Metric {
     static belongsTo = [campaign:Campaign, datasource:Datasource]
     static constraints = {
     }
-    static namedQueries = {
-        hasDatasource { dsNamesList ->
-            datasource {
-                    or {
-                        dsNamesList.each {
-                            eq('title', it)
-                        }
-                    }
-            }
-        }
-    }
+
 
 }
